@@ -2,6 +2,10 @@ using System.Text;
 using CampusPlacementSystem.Data;
 using CampusPlacementSystem.Middleware;
 using CampusPlacementSystem.Models;
+using CampusPlacementSystem.Repositories.Implementations;
+using CampusPlacementSystem.Repositories.Interfaces;
+using CampusPlacementSystem.Services.Implementations;
+using CampusPlacementSystem.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -70,6 +74,12 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+// Register Repositories
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
+// Register Services
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 // CORS Configuration for future Angular frontend
 builder.Services.AddCors(options =>
 {
@@ -83,6 +93,9 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Seed initial roles and SuperAdmin user
+await DbSeeder.SeedRolesAndSuperAdminAsync(app.Services);
 
 // Centralized Exception Handling Middleware
 app.UseMiddleware<GlobalExceptionMiddleware>();
