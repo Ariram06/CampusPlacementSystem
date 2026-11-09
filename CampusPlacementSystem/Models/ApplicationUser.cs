@@ -15,4 +15,11 @@ public class ApplicationUser : IdentityUser
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public DateTime? UpdatedAt { get; set; }
+
+    // Navigation Properties
+    public PlacementOfficer? PlacementOfficer { get; set; }
+    public CompanyHR? CompanyHR { get; set; }
+    public Student? Student { get; set; }
+    public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
+    public ICollection<ApplicationStatusHistory> UpdatedStatusHistories { get; set; } = new List<ApplicationStatusHistory>();
 }
