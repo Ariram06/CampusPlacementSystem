@@ -14,8 +14,12 @@ using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add Controllers
-builder.Services.AddControllers();
+// Add Controllers with String Enum Converter
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
 
 // Add OpenAPI / Scalar documentation
 builder.Services.AddOpenApi();
@@ -76,9 +80,11 @@ builder.Services.AddAuthorization();
 
 // Register Repositories
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<ICollegeRepository, CollegeRepository>();
 
 // Register Services
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICollegeService, CollegeService>();
 
 // CORS Configuration for future Angular frontend
 builder.Services.AddCors(options =>
