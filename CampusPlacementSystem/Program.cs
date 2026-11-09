@@ -82,11 +82,15 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<ICollegeRepository, CollegeRepository>();
 builder.Services.AddScoped<IPlacementOfficerRepository, PlacementOfficerRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<ICompanyHRRepository, CompanyHRRepository>();
 
 // Register Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICollegeService, CollegeService>();
 builder.Services.AddScoped<IPlacementOfficerService, PlacementOfficerService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICompanyHRService, CompanyHRService>();
 
 // CORS Configuration for future Angular frontend
 builder.Services.AddCors(options =>
