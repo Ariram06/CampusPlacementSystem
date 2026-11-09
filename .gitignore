@@ -1,0 +1,28 @@
+## Visual Studio / .NET Core
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.dbmdl
+*.jfm
+*.log
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+
+# Sensitive or user-specific files
+appsettings.Production.json
+*.pfx
+*.key

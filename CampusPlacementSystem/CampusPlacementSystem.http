@@ -1,0 +1,6 @@
+@CampusPlacementSystem_HostAddress = http://localhost:5217
+
+GET {{CampusPlacementSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
