@@ -84,6 +84,7 @@ builder.Services.AddScoped<ICollegeRepository, CollegeRepository>();
 builder.Services.AddScoped<IPlacementOfficerRepository, PlacementOfficerRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICompanyHRRepository, CompanyHRRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
 // Register Services
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -91,6 +92,7 @@ builder.Services.AddScoped<ICollegeService, CollegeService>();
 builder.Services.AddScoped<IPlacementOfficerService, PlacementOfficerService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<ICompanyHRService, CompanyHRService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 
 // CORS Configuration for future Angular frontend
 builder.Services.AddCors(options =>
