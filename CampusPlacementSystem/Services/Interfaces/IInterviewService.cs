@@ -17,3 +17,4 @@ public interface IInterviewService
     Task<ApiResponse<PagedResult<InterviewScheduleResponseDto>>> GetSchedulesAsync(InterviewFilterParams filterParams, string currentUserId, string currentUserRole);
     Task<ApiResponse<bool>> CancelScheduleAsync(int scheduleId, string hrUserId, string currentUserRole);
 }
+

@@ -25,3 +25,4 @@ public interface IInterviewRepository
     Task UpdateScheduleAsync(InterviewSchedule schedule);
     Task SaveChangesAsync();
 }
+

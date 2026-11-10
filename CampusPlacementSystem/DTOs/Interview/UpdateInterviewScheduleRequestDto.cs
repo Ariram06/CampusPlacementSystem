@@ -17,3 +17,4 @@ public class UpdateInterviewScheduleRequestDto
     [Required(ErrorMessage = "Status is required.")]
     public InterviewStatus Status { get; set; }
 }
+

@@ -26,3 +26,4 @@ public class InterviewScheduleResponseDto
     public string? Feedback { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+

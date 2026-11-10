@@ -11,3 +11,4 @@ public class SubmitInterviewFeedbackRequestDto
 
     public InterviewStatus Status { get; set; } = InterviewStatus.Completed;
 }
+

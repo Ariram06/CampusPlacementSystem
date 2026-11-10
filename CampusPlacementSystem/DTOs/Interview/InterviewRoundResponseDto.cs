@@ -10,3 +10,4 @@ public class InterviewRoundResponseDto
     public string? Description { get; set; }
     public int TotalScheduledInterviews { get; set; }
 }
+

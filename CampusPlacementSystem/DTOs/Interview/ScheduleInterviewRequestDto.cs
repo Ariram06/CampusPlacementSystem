@@ -19,3 +19,4 @@ public class ScheduleInterviewRequestDto
     [MaxLength(250, ErrorMessage = "Venue cannot exceed 250 characters.")]
     public string? Venue { get; set; }
 }
+
