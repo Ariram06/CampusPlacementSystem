@@ -80,7 +80,11 @@ public class RecruitmentDriveService : IRecruitmentDriveService
             return ApiResponse<RecruitmentDriveResponseDto>.FailureResult($"College '{college.CollegeName}' is not targeted by this job opening.");
         }
 
-        if (request.DriveDate <= DateTime.UtcNow)
+        var driveDateUtc = request.DriveDate.Kind == DateTimeKind.Utc 
+            ? request.DriveDate 
+            : request.DriveDate.ToUniversalTime();
+
+        if (driveDateUtc <= DateTime.UtcNow)
         {
             return ApiResponse<RecruitmentDriveResponseDto>.FailureResult("Recruitment drive date must be scheduled for a future date and time.");
         }
@@ -89,7 +93,7 @@ public class RecruitmentDriveService : IRecruitmentDriveService
         {
             JobId = request.JobId,
             CollegeId = request.CollegeId,
-            DriveDate = request.DriveDate,
+            DriveDate = driveDateUtc,
             Venue = request.Venue.Trim(),
             Description = request.Description?.Trim(),
             Status = DriveStatus.Scheduled,

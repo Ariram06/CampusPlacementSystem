@@ -18,3 +18,4 @@ public class RecruitmentDriveResponseDto
     public DriveStatus Status { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+

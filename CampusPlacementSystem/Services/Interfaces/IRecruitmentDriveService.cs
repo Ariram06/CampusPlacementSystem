@@ -11,3 +11,4 @@ public interface IRecruitmentDriveService
     Task<ApiResponse<PagedResult<RecruitmentDriveResponseDto>>> GetDrivesAsync(RecruitmentDriveFilterParams filterParams, string currentUserId, string currentUserRole);
     Task<ApiResponse<bool>> CancelDriveAsync(int id, string hrUserId, string currentUserRole);
 }
+

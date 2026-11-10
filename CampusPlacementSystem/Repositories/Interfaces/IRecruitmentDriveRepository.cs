@@ -16,3 +16,4 @@ public interface IRecruitmentDriveRepository
     Task UpdateAsync(RecruitmentDrive drive);
     Task SaveChangesAsync();
 }
+

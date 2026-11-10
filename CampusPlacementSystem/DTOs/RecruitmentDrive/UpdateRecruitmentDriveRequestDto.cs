@@ -18,3 +18,4 @@ public class UpdateRecruitmentDriveRequestDto
     [Required(ErrorMessage = "Status is required.")]
     public DriveStatus Status { get; set; }
 }
+
